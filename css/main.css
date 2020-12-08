@@ -479,6 +479,7 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 20px auto 0px;
 }
 
 .container .notes__new .title-new {
