@@ -12,6 +12,11 @@ let date = new Date();
 
 let notesList = [];
 
+window.onload = function() {
+    if (localStorage.getItem('note')) {
+        notesBlock.innerHTML = localStorage.getItem('note');
+    } 
+}
 
 /* Действие на кнопку "новая заметка"  */
 function showBlock() {
@@ -56,5 +61,6 @@ function showNotes() {
             <p class="item__date">` + date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear() +`</p>
         </div>`;
         notesBlock.innerHTML = showNote;
+        localStorage.setItem('note', notesBlock.innerHTML);
     }
 }
