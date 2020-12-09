@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* цвета */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0-modified | 20110126
    License: none (public domain)
@@ -366,7 +368,7 @@ textarea {
 .header {
   width: 100%;
   height: 60px;
-  background-color: aqua;
+  background-color: #e9e9e9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,21 +391,35 @@ textarea {
 }
 
 .btn {
-  width: 150px;
-  height: 30px;
   font-size: 14px;
   font-family: inherit;
+  font-weight: 600;
+}
+
+#new-notes {
+  background-color: #e9e9e9;
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+#btn-delete {
+  margin-left: 20px;
+}
+
+#btn-cancel {
+  margin-left: 5px;
 }
 
 .container {
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
-  background-color: bisque;
 }
 
 .container .title {
-  background-color: red;
   padding: 25px 0px;
   text-align: center;
 }
@@ -433,25 +449,36 @@ textarea {
           align-items: center;
 }
 
-.container .notes__item {
-  display: block;
-  position: relative;
-  margin-bottom: 15px;
-  padding: 10px 10px 5px 35px;
+.container .notes__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 800px;
+  margin-bottom: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .notes__wrapper .notes__item {
   width: 75%;
   height: 120px;
-  background-color: lawngreen;
-  border: 1px solid lawngreen;
+  margin-left: 13%;
+  background-color: #fcfcfc;
+  border: 1px solid #fcfcfc;
   border-radius: 40px;
+  display: block;
+  position: relative;
+  padding: 10px 10px 5px 35px;
   overflow: hidden;
 }
 
-.container .notes__item .item__title {
+.container .notes__wrapper .notes__item .item__title {
   font-size: 16px;
   font-weight: 600;
 }
 
-.container .notes__item .item__text {
+.container .notes__wrapper .notes__item .item__text {
   margin-top: 5px;
   font-size: 14px;
   line-height: 1.2;
@@ -465,7 +492,7 @@ textarea {
   box-orient: vertical;
 }
 
-.container .notes__item .item__date {
+.container .notes__wrapper .notes__item .item__date {
   position: absolute;
   bottom: 5px;
   font-size: 13px;
@@ -473,7 +500,6 @@ textarea {
 }
 
 .container .notes__new {
-  background-color: lightblue;
   width: 860px;
   display: none;
   -webkit-box-orient: vertical;
@@ -491,6 +517,7 @@ textarea {
   outline: none;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  border-bottom: 1px solid #e9e9e9;
 }
 
 .container .notes__new .textarea {
@@ -507,6 +534,7 @@ textarea {
 
 .container .notes__new .buttons {
   margin-top: 5px;
+  margin-left: 10px;
 }
 
 .notes__new.show {
@@ -556,10 +584,13 @@ textarea {
 
 html, body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #f2f2f2;
+  color: #0B0B0B;
+  position: relative;
 }
 /*# sourceMappingURL=main.css.map */

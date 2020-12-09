@@ -22,6 +22,7 @@ window.onload = function() {
 function showBlock() {
     notesBlock.style.display = 'none';
     notesNew.classList.add("show");
+    newNotesBtn.style.display = 'none';
     titleNewNote.value = '';
     textarea.value = '';
   }
@@ -31,6 +32,7 @@ function showBlock() {
 function hideBlock() {
     notesNew.classList.remove('show');
     notesBlock.style.display = 'flex';
+    newNotesBtn.style.display = 'block';
 };
   btnCancel.addEventListener('click', hideBlock);
     
@@ -47,6 +49,7 @@ btnSave.addEventListener('click', function() {
     notesList.push(note);
     // notesCount++;
     // titleSecond.textContent = notesCount + ' заметка';
+    newNotesBtn.style.display = 'block';
     showNotes();
 });
 
@@ -55,12 +58,18 @@ function showNotes() {
 
     for (let i = 0; i < notesList.length; i++ ) {
         showNote += `
-        <div class="notes__item" id="item_${i}">
-            <p class="item__title">`+ notesList[i].title +`</p>
-            <p class="item__text">`+ notesList[i].text +`</p>
-            <p class="item__date">` + date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear() +`</p>
-        </div>`;
+        <div class="notes__wrapper">
+            <div class="notes__item" id="item_${i}">
+                <p class="item__title">`+ notesList[i].title +`</p>
+                <p class="item__text">`+ notesList[i].text +`</p>
+                <p class="item__date">` + date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() +`</p>
+            </div>
+            <button class="btn" id="btn-delete" uk-icon='icon: trash; ratio: 1.5'></button>
+        </div>`
+        
+        
+            
         notesBlock.innerHTML = showNote;
         localStorage.setItem('note', notesBlock.innerHTML);
     }
-}
+};

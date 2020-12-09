@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.14/dist/css/uikit.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
     <title>Веб-заметки</title>
 </head>
 <body>
+    <button class="btn" id="new-notes" uk-icon="icon: plus; ratio: 1.5"></button>
     <header class="header">
         <div class="logo">
             <a href="index.html">
                 <img src="img/logo.png" alt="Logo">
             </a>
         </div>
-        <button class="btn" id="new-notes">Новая заметка</button>
     </header>
     <main class="content">
         <div class="container">
@@ -31,8 +32,8 @@
                 <input class="title-new" type="text" placeholder="Название">
                 <textarea class="textarea" placeholder="Примечания"></textarea>
                 <div class="buttons">
-                    <button class="btn btn-save" id="btn-save">Сохранить</button>
-                    <button class="btn btn-cancel" id="btn-cancel">Отмена</button>
+                    <button class="btn btn-save" id="btn-save" uk-icon="icon: check; ratio: 1.75"></button>
+                    <button class="btn btn-cancel" id="btn-cancel" uk-icon="icon: close; ratio: 1.75"></button>
                 </div>
             </div>
             
@@ -40,7 +41,8 @@
     </main>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.14/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.14/dist/js/uikit-icons.min.js"></script>
 <script src="js/main.js"></script>   
 </body>
 </html>
