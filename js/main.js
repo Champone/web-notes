@@ -10,19 +10,20 @@ const titleSecond = document.querySelector('.title__second');
 let date = new Date();
 
 
+
 let notesList = [];
 
 window.onload = function() {
     if (localStorage.getItem('note')) {
-        notesBlock.innerHTML = localStorage.getItem('note');
-    } 
+        notesList = JSON.parse(localStorage.getItem('note'));
+        showNotes();
+    }
 }
 
 /* Действие на кнопку "новая заметка"  */
 function showBlock() {
     notesBlock.style.display = 'none';
     notesNew.classList.add("show");
-    newNotesBtn.style.display = 'none';
     titleNewNote.value = '';
     textarea.value = '';
   }
@@ -32,7 +33,6 @@ function showBlock() {
 function hideBlock() {
     notesNew.classList.remove('show');
     notesBlock.style.display = 'flex';
-    newNotesBtn.style.display = 'block';
 };
   btnCancel.addEventListener('click', hideBlock);
     
@@ -47,29 +47,28 @@ btnSave.addEventListener('click', function() {
 
     hideBlock();
     notesList.push(note);
+    localStorage.setItem('note', JSON.stringify(notesList));
     // notesCount++;
     // titleSecond.textContent = notesCount + ' заметка';
-    newNotesBtn.style.display = 'block';
     showNotes();
 });
 
 function showNotes() {
-    let showNote = '';
-
+    let newData= '';
     for (let i = 0; i < notesList.length; i++ ) {
-        showNote += `
-        <div class="notes__wrapper">
-            <div class="notes__item" id="item_${i}">
+        newData += 
+        `<div class="notes__wrapper">
+            <div class="notes__item">
                 <p class="item__title">`+ notesList[i].title +`</p>
                 <p class="item__text">`+ notesList[i].text +`</p>
                 <p class="item__date">` + date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() +`</p>
             </div>
-            <button class="btn" id="btn-delete" uk-icon='icon: trash; ratio: 1.5'></button>
+            <button class="btn btn-delete" id="btn-delete" uk-icon='icon: trash; ratio: 1.5' onclick="deleteNote();"></button>
         </div>`
-        
-        
-            
-        notesBlock.innerHTML = showNote;
-        localStorage.setItem('note', notesBlock.innerHTML);
     }
-};
+    notesBlock.innerHTML = newData;
+}
+
+function deleteNote() {
+    alert();
+}
