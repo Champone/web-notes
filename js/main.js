@@ -1,5 +1,6 @@
 const newNotesBtn = document.querySelector('#new-notes');
 const notesBlock = document.querySelector('.notes');
+const notesWrapper = document.querySelector('.notes__wrapper');
 const notesNew = document.querySelector('.notes__new');
 const btnCancel = document.querySelector('#btn-cancel');
 const btnSave = document.querySelector('#btn-save');
@@ -57,18 +58,24 @@ function showNotes() {
     let newData= '';
     for (let i = 0; i < notesList.length; i++ ) {
         newData += 
-        `<div class="notes__wrapper">
+        `
+        <div class="notes__wrapper" id="${i}">
             <div class="notes__item">
                 <p class="item__title">`+ notesList[i].title +`</p>
                 <p class="item__text">`+ notesList[i].text +`</p>
                 <p class="item__date">` + date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() +`</p>
             </div>
-            <button class="btn btn-delete" id="btn-delete" uk-icon='icon: trash; ratio: 1.5' onclick="deleteNote();"></button>
-        </div>`
+            <button class="btn btn-delete" id="btn-delete_${i}" uk-icon='icon: trash; ratio: 1.5'" onclick="deleteNote(this)"></button>
+        </div>
+        `
     }
     notesBlock.innerHTML = newData;
-}
+    
+};
 
-function deleteNote() {
-    alert();
-}
+function deleteNote(el) {
+    let parent = el.parentElement;
+    parent.style.display = 'none';
+    notesList.splice(parent.id);
+    localStorage.setItem('note', JSON.stringify(notesList));
+};
