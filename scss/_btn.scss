@@ -15,7 +15,12 @@
 }
 
 .btn-delete {
+    margin-left: 10px;
+    color: $mainColor;
+}
+.btn-edit {
     margin-left: 20px;
+    color: $mainColor;
 }
 #btn-cancel {
     margin-left: 5px;
@@ -24,3 +29,4 @@
 #btn-new2 {
     display: none;
 }
+

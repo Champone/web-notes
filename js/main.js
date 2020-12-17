@@ -9,17 +9,23 @@ const textarea = document.querySelector('.textarea');
 let notesCount = 0;
 const titleSecond = document.querySelector('.title__second');
 let date = new Date();
-
+let noteTitle;
+let noteText;
+let noteId;
 
 
 let notesList = [];
 
+/* Загрузка заметок, если они есть */
 window.onload = function() {
     if (localStorage.getItem('note')) {
         notesList = JSON.parse(localStorage.getItem('note'));
         showNotes();
     }
+    notesCount = notesList.length;
+    titleSecond.innerHTML = 'Всего: ' + notesCount;
 }
+/* =============================== */
 
 /* Действие на кнопку "новая заметка"  */
 function showBlock() {
@@ -29,6 +35,7 @@ function showBlock() {
     textarea.value = '';
   }
   newNotesBtn.addEventListener('click', showBlock);
+/* =============================== */  
 
 /* Действие на кнопку "отмена" */
 function hideBlock() {
@@ -36,7 +43,7 @@ function hideBlock() {
     notesBlock.style.display = 'flex';
 };
   btnCancel.addEventListener('click', hideBlock);
-    
+/* =============================== */    
 
 
 /* Действие на кнопку "сохранить" */
@@ -46,11 +53,18 @@ btnSave.addEventListener('click', function() {
         text: textarea.value
     };
 
+    if (note.title === '' && note.text === '') return;
+
+    if (notesList[noteId]) {
+        notesList[noteId] = note;
+    }
+    else {
+        notesList.push(note);
+    }
+    notesCount = notesList.length;
+    titleSecond.innerHTML = 'Всего: ' + notesCount;
     hideBlock();
-    notesList.push(note);
     localStorage.setItem('note', JSON.stringify(notesList));
-    // notesCount++;
-    // titleSecond.textContent = notesCount + ' заметка';
     showNotes();
 });
 
@@ -65,17 +79,42 @@ function showNotes() {
                 <p class="item__text">`+ notesList[i].text +`</p>
                 <p class="item__date">` + date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() +`</p>
             </div>
-            <button class="btn btn-delete" id="btn-delete_${i}" uk-icon='icon: trash; ratio: 1.5'" onclick="deleteNote(this)"></button>
+            <button class="btn btn-edit" id="btn-edit${i}" uk-icon='icon: pencil; ratio: 1.5' onclick="editNote(this)"></button>
+            <button class="btn btn-delete" id="btn-delete_${i}" uk-icon='icon: trash; ratio: 1.5' onclick="deleteNote(this)"></button>
         </div>
         `
     }
     notesBlock.innerHTML = newData;
     
 };
+/* =============================== */
+
+/* Действие на кнопку удалить заметку */
 
 function deleteNote(el) {
     let parent = el.parentElement;
     parent.style.display = 'none';
     notesList.splice(parent.id);
     localStorage.setItem('note', JSON.stringify(notesList));
+    notesCount = notesList.length;
+    titleSecond.innerHTML = 'Всего: ' + notesCount;
 };
+/* =============================== */
+
+/* Действие на кнопку изменить заметку */
+
+function editNote(el) {
+    let parent = el.parentElement;
+    noteId = parent.id;
+    noteTitle = parent.querySelector('.item__title').textContent;
+    noteText = parent.querySelector('.item__text').textContent;
+    showEditBlock();
+};
+
+function showEditBlock() {
+    notesBlock.style.display = 'none';
+    notesNew.classList.add("show");
+    titleNewNote.value = noteTitle;
+    textarea.value = noteText;
+};
+

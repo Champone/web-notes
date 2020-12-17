@@ -407,7 +407,13 @@ textarea {
 }
 
 .btn-delete {
+  margin-left: 10px;
+  color: #0B0B0B;
+}
+
+.btn-edit {
   margin-left: 20px;
+  color: #0B0B0B;
 }
 
 #btn-cancel {
@@ -435,8 +441,9 @@ textarea {
 
 .container .title__first {
   font-size: 45px;
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .container .title__second {
@@ -489,7 +496,10 @@ textarea {
 .container .notes__wrapper .notes__item .item__title {
   font-size: 16px;
   font-weight: 600;
-  display: inline-block;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .container .notes__wrapper .notes__item .item__text {
