@@ -2,10 +2,12 @@
     font-size: 14px;
     font-family: inherit;
     font-weight: 600;
+    &:focus {
+        outline: none;
+    }
 }
 
 #new-notes {
-    background-color: $thirdBG;
     position: fixed;
     bottom: 50px;
     right: 100px;
@@ -16,11 +18,9 @@
 
 .btn-delete {
     margin-left: 10px;
-    color: $mainColor;
 }
 .btn-edit {
     margin-left: 20px;
-    color: $mainColor;
 }
 #btn-cancel {
     margin-left: 5px;

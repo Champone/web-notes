@@ -1,13 +1,19 @@
 .content {
     background-color: inherit;
+    padding: 65px 0px 25px;
+    z-index: 5;
+    overflow-y: scroll;
+    height: calc(100vh - 1px);
+    max-height: calc(100vh - 1px);
+    
 }
 .container {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
+    
 
     & .title {
-        padding: 25px 0px;
         text-align: center;
         &__first {
             font-size: 45px;
@@ -26,6 +32,7 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
+        
         &__wrapper {
             display: flex;
             width: 800px;
@@ -38,13 +45,15 @@
                 width: 75%;
                 height: 120px;
                 margin-left: 13%;
-                background-color: $secondBG;
-                border: 1px solid $secondBG;
                 border-radius: 40px;
                 display: block;
                 position: relative;
                 padding: 10px 10px 5px 35px;
                 overflow: hidden;
+
+                -webkit-box-shadow: 0px 2px 14px 0px rgba(34, 60, 80, 0.2);
+                -moz-box-shadow: 0px 2px 14px 0px rgba(34, 60, 80, 0.2);
+                box-shadow: 0px 2px 14px 0px rgba(34, 60, 80, 0.2);
                 & .item__title {
                     font-size: 16px;
                     font-weight: 600;
@@ -78,6 +87,28 @@
             } 
         }
     }
+
+    & .notes.box {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        & .notes__wrapper {
+            display: block;
+            width: 300px;
+            margin-bottom: 20px;
+            & .notes__item {
+                width: 230px;
+            }
+            & button {
+                margin: 10px 0px 0px 0px;
+            }
+            & .btn-edit {
+                margin-left: 35%;
+            }
+        }
+    }
     .notes__new {
         width: 860px;
 
@@ -89,10 +120,11 @@
             padding-top: 5px;
             font-size: 18px;
             border: none;
-            outline: none;
+            outline: none;   
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
-            border-bottom: 1px solid $thirdBG;
+            
+            
         }
         & .textarea {
             height: 420px;

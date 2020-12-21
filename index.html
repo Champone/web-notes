@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.14/dist/css/uikit.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/light.css" id="theme">
 
     <title>Веб-заметки</title>
 </head>
@@ -18,6 +19,21 @@
             <a href="index.html">
                 <img src="img/logo.png" alt="Logo">
             </a>
+        </div>
+        <div class="settings">
+            <button class="btn btn-settings" id="btn-settings" uk-icon="icon: cog; ratio: 1.5"></button>
+        </div>
+        <div class="menu" id="menu">
+            <div class="menu__item">
+                <span>Вид</span>
+                <button id="btn-view" uk-icon="icon: thumbnails; ratio: 1.2"></button>
+            </div>
+            <div class="menu__item">
+                <span>Тёмное оформление</span>
+                <div class="toggle-btn">
+                    <div class="circle"></div>
+                </div>
+            </div>
         </div>
     </header>
     <main class="content">

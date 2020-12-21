@@ -1,0 +1,81 @@
+body {
+  background-color: #16171B;
+  color: #fcfcfc;
+}
+
+.header {
+  background-color: #202125;
+}
+
+.menu {
+  background-color: #494A4E;
+}
+
+.toggle-btn {
+  background-color: #16171B;
+}
+
+.circle {
+  background-color: #fcfcfc;
+}
+
+#new-notes {
+  background-color: #202125;
+}
+
+.btn-delete {
+  color: #fcfcfc;
+}
+
+.btn-edit {
+  color: #fcfcfc;
+}
+
+.notes__item {
+  background-color: #494A4E;
+  border: 1px solid #494A4E;
+}
+
+.title-new {
+  background-color: #494A4E;
+  color: #fcfcfc;
+}
+
+.title-new::-webkit-input-placeholder {
+  color: #fcfcfc;
+}
+
+.title-new:-ms-input-placeholder {
+  color: #fcfcfc;
+}
+
+.title-new::-ms-input-placeholder {
+  color: #fcfcfc;
+}
+
+.title-new::placeholder {
+  color: #fcfcfc;
+}
+
+.textarea {
+  background-color: #494A4E;
+  color: #fcfcfc;
+  border-top: 1px solid #202125;
+}
+
+.textarea::-webkit-input-placeholder {
+  color: #fcfcfc;
+}
+
+.textarea:-ms-input-placeholder {
+  color: #fcfcfc;
+}
+
+.textarea::-ms-input-placeholder {
+  color: #fcfcfc;
+}
+
+.textarea::placeholder {
+  color: #fcfcfc;
+}
+/*# sourceMappingURL=dark.css.map */

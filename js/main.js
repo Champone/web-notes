@@ -118,3 +118,78 @@ function showEditBlock() {
     textarea.value = noteText;
 };
 
+/* ================================= */
+
+const toggleSwitch = document.querySelector('.toggle-btn');
+const theme = document.querySelector('#theme');
+toggleSwitch.onclick = function() {
+
+    const lightTheme = "css/light.css";
+    const darkTheme = "css/dark.css";
+    let currentTheme = theme.getAttribute("href");
+
+    if (currentTheme == lightTheme) {
+        currentTheme = darkTheme;
+        toggleSwitch.classList.add('toggle-active');
+    }
+    else {
+        currentTheme = lightTheme;
+        toggleSwitch.classList.remove('toggle-active');
+    } 
+
+    theme.setAttribute("href", currentTheme);
+    localStorage.setItem('theme', currentTheme);
+};
+
+if (localStorage.getItem('theme')) {
+    let curThem = localStorage.getItem('theme');
+    theme.setAttribute("href", curThem);
+    if (curThem == 'css/light.css') {
+        toggleSwitch.classList.remove('toggle-active');
+    }
+    else {
+        toggleSwitch.classList.add('toggle-active');
+    }
+}
+else {
+    theme.setAttribute("href", 'css/light.css');
+};
+
+/* ================================= */
+
+const btnSettings = document.querySelector('.btn-settings');
+const menu = document.querySelector('.menu');
+const content = document.querySelector('.content');
+
+btnSettings.addEventListener('click', () => {
+    menu.classList.toggle('menu-show');
+});
+
+content.addEventListener('click', () => {
+    menu.classList.remove('menu-show');
+});
+
+/* ================================= */
+
+const btnView = document.querySelector('#btn-view');
+
+btnView.addEventListener('click', function(){
+
+    if (notesBlock.classList.contains('box')) {
+        notesBlock.classList.remove('box')
+        localStorage.setItem('view', 'line')
+    }
+    else {
+        notesBlock.classList.add('box');
+        localStorage.setItem('view', 'box');
+    }
+});
+
+if (localStorage.getItem('view') === 'line') {
+    notesBlock.classList.remove('box')
+}
+else {
+    notesBlock.classList.add('box');
+};
+
+

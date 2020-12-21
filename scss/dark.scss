@@ -1,0 +1,50 @@
+$mainColor: #fcfcfc;
+$mainBG: #16171B;
+$secondBG: #202125;
+$thirdBG: #494A4E;
+
+body {
+    background-color: $mainBG;
+    color: $mainColor;
+}
+.header {
+    background-color: $secondBG;
+}
+.menu {
+    background-color: $thirdBG;
+}
+.toggle-btn {
+    background-color: $mainBG;
+}
+.circle {
+    background-color: $mainColor; 
+}
+#new-notes {
+    background-color: $secondBG;
+}
+.btn-delete {
+    color: $mainColor;
+}
+.btn-edit {
+    color: $mainColor;
+}
+.notes__item {
+    background-color: $thirdBG;
+    border: 1px solid $thirdBG;
+}
+.title-new {
+    background-color: $thirdBG;
+    color: $mainColor;
+    &::placeholder {
+        color: $mainColor;
+    }
+    
+}
+.textarea {
+    background-color: $thirdBG;
+    color: $mainColor;
+    &::placeholder {
+        color: $mainColor;
+    }
+    border-top: 1px solid $secondBG;
+}
