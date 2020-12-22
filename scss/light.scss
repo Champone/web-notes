@@ -32,6 +32,18 @@ body {
     background-color: $thirdBG;
     border: 1px solid $thirdBG;
 }
-// .title-new {
-//     border-bottom: 1px solid $secondBG;
-// }
+.logo__item {
+    color: $mainColor;
+    &:hover {
+        color: $mainColor; 
+    }
+}
+.footer {
+    background-color: $mainBG;
+    &__link {
+        color: $mainColor;
+        &:hover {
+            color: $mainColor;
+        }
+    }
+}

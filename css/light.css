@@ -35,4 +35,24 @@ body {
   background-color: #fcfcfc;
   border: 1px solid #fcfcfc;
 }
+
+.logo__item {
+  color: #0B0B0B;
+}
+
+.logo__item:hover {
+  color: #0B0B0B;
+}
+
+.footer {
+  background-color: #f2f2f2;
+}
+
+.footer__link {
+  color: #0B0B0B;
+}
+
+.footer__link:hover {
+  color: #0B0B0B;
+}
 /*# sourceMappingURL=light.css.map */

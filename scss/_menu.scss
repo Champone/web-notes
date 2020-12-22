@@ -1,0 +1,28 @@
+.menu {
+    position: absolute;
+    top: 50px;
+    right: 35px;
+    display: none;
+    width: 250px;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 2px 5px 0px rgba(34, 60, 80, 0.2);
+    & .menu__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        &:first-child {
+            margin-top: 0px;
+        }
+        & #btn-view {
+            margin-left: 15px;
+        }
+    }
+}
+.menu.menu-show {
+    display: block;
+}   

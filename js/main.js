@@ -8,7 +8,6 @@ const titleNewNote = document.querySelector('.title-new');
 const textarea = document.querySelector('.textarea');
 let notesCount = 0;
 const titleSecond = document.querySelector('.title__second');
-let date = new Date();
 let noteTitle;
 let noteText;
 let noteId;
@@ -69,6 +68,7 @@ btnSave.addEventListener('click', function() {
 });
 
 function showNotes() {
+    let date = new Date();
     let newData= '';
     for (let i = 0; i < notesList.length; i++ ) {
         newData += 
@@ -79,8 +79,8 @@ function showNotes() {
                 <p class="item__text">`+ notesList[i].text +`</p>
                 <p class="item__date">` + date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() +`</p>
             </div>
-            <button class="btn btn-edit" id="btn-edit${i}" uk-icon='icon: pencil; ratio: 1.5' onclick="editNote(this)"></button>
-            <button class="btn btn-delete" id="btn-delete_${i}" uk-icon='icon: trash; ratio: 1.5' onclick="deleteNote(this)"></button>
+            <button class="btn btn-edit" id="btn-edit${i}" uk-icon='icon: pencil; ratio: 1.5' uk-tooltip="Изменить заметку" onclick="editNote(this)"></button>
+            <button class="btn btn-delete" id="btn-delete_${i}" uk-icon='icon: trash; ratio: 1.5' uk-tooltip="Удалить заметку" onclick="deleteNote(this)"></button>
         </div>
         `
     }
@@ -176,12 +176,14 @@ const btnView = document.querySelector('#btn-view');
 btnView.addEventListener('click', function(){
 
     if (notesBlock.classList.contains('box')) {
-        notesBlock.classList.remove('box')
-        localStorage.setItem('view', 'line')
+        notesBlock.classList.remove('box');
+        localStorage.setItem('view', 'line');
+        btnView.setAttribute('uk-icon', 'icon: thumbnails; ratio: 1.2');
     }
     else {
         notesBlock.classList.add('box');
         localStorage.setItem('view', 'box');
+        btnView.setAttribute('uk-icon', 'icon: menu; ratio: 1.2');
     }
 });
 

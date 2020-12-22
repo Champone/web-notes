@@ -1,6 +1,11 @@
 @import '_header';
+@import '_menu';
+@import '_toggleButton';
 @import '_btn';
 @import '_content';
+@import '_notes';
+@import '_notesNew';
+@import'_footer';
 @import 'other';
 
 h1,h2,h3,h4,h5,h6,p, body {
@@ -26,5 +31,5 @@ body {
     
     font-family: 'Montserrat', sans-serif;
     position: relative;
-    overflow: hidden;
+    
 }

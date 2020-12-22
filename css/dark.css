@@ -60,7 +60,6 @@ body {
 .textarea {
   background-color: #494A4E;
   color: #fcfcfc;
-  border-top: 1px solid #202125;
 }
 
 .textarea::-webkit-input-placeholder {
@@ -76,6 +75,26 @@ body {
 }
 
 .textarea::placeholder {
+  color: #fcfcfc;
+}
+
+.logo__item {
+  color: #fcfcfc;
+}
+
+.logo__item:hover {
+  color: #fcfcfc;
+}
+
+.footer {
+  background-color: #16171B;
+}
+
+.footer__link {
+  color: #fcfcfc;
+}
+
+.footer__link:hover {
   color: #fcfcfc;
 }
 /*# sourceMappingURL=dark.css.map */

@@ -1,0 +1,14 @@
+.footer {
+    font-size: 13px;
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__link {
+        text-decoration: none;
+        margin-left: 20px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

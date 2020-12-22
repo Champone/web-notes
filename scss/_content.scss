@@ -2,16 +2,12 @@
     background-color: inherit;
     padding: 65px 0px 25px;
     z-index: 5;
-    overflow-y: scroll;
-    height: calc(100vh - 1px);
-    max-height: calc(100vh - 1px);
     
 }
 .container {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
-    
 
     & .title {
         text-align: center;
@@ -27,137 +23,4 @@
         }
 
     }
-    & .notes {
-        padding: 30px 0px;
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        
-        &__wrapper {
-            display: flex;
-            width: 800px;
-            margin-bottom: 20px;
-            align-items: center;
-            &:first-child {
-                margin-bottom: 0px;
-            }
-            & .notes__item {
-                width: 75%;
-                height: 120px;
-                margin-left: 13%;
-                border-radius: 40px;
-                display: block;
-                position: relative;
-                padding: 10px 10px 5px 35px;
-                overflow: hidden;
-
-                -webkit-box-shadow: 0px 2px 14px 0px rgba(34, 60, 80, 0.2);
-                -moz-box-shadow: 0px 2px 14px 0px rgba(34, 60, 80, 0.2);
-                box-shadow: 0px 2px 14px 0px rgba(34, 60, 80, 0.2);
-                & .item__title {
-                    font-size: 16px;
-                    font-weight: 600;
-                    display: block;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                }
-                & .item__text {
-                    margin-top: 5px;
-                    font-size: 14px;
-                    line-height: 1.2;
-                    
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    display: -moz-box;
-                    -moz-box-orient: vertical;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    line-clamp: 3;
-                    box-orient: vertical;
-                }
-                & .item__date {
-                    position: absolute;
-                    bottom: 5px;
-                    font-size: 13px;
-                    font-weight: 300;
-                    
-                }
-            } 
-        }
-    }
-
-    & .notes.box {
-        width: 80%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin: 0 auto;
-        & .notes__wrapper {
-            display: block;
-            width: 300px;
-            margin-bottom: 20px;
-            & .notes__item {
-                width: 230px;
-            }
-            & button {
-                margin: 10px 0px 0px 0px;
-            }
-            & .btn-edit {
-                margin-left: 35%;
-            }
-        }
-    }
-    .notes__new {
-        width: 860px;
-
-        display: none;
-        flex-direction: column;
-        margin: 20px auto 0px;
-        & .title-new {
-            padding-left: 10px;
-            padding-top: 5px;
-            font-size: 18px;
-            border: none;
-            outline: none;   
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            
-            
-        }
-        & .textarea {
-            height: 420px;
-            padding: 10px;
-            font-size: 14px;
-            font-weight: 400;
-            border: none;
-            resize: none;
-            outline: none;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-        & .buttons {
-            margin-top: 5px;
-            margin-left: 10px;
-        }
-    }
 }
-
-.notes__new.show {
-    display: flex;
-    animation: showBlock 0.5s linear forwards;
-}
-
-.notes {
-    display: flex;
-    animation: showBlock 0.5s linear forwards;
-}
-@keyframes showBlock {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }

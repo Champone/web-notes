@@ -13,12 +13,10 @@
     <title>Веб-заметки</title>
 </head>
 <body>
-    <button class="btn" id="new-notes" uk-icon="icon: plus; ratio: 1.5"></button>
+    <button class="btn" id="new-notes" uk-icon="icon: plus; ratio: 1.5" uk-tooltip="Добавить новую заметку"></button>
     <header class="header">
         <div class="logo">
-            <a href="index.html">
-                <img src="img/logo.png" alt="Logo">
-            </a>
+            <a class="logo__item" href="index.html" uk-icon="icon: file-text; ratio: 2"></a>
         </div>
         <div class="settings">
             <button class="btn btn-settings" id="btn-settings" uk-icon="icon: cog; ratio: 1.5"></button>
@@ -56,7 +54,10 @@
             
         </div>
     </main>
-
+    <footer class="footer">
+        <p class="footer__text">&copy 2020 Dmitry Opekushin</p>
+        <a href="https://github.com/Champone/web-notes" target="_blank" class="footer__link" uk-icon="icon: github; ratio: 1.5"></a>
+    </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.14/dist/js/uikit.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.14/dist/js/uikit-icons.min.js"></script>
