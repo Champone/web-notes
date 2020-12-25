@@ -47,9 +47,11 @@ function hideBlock() {
 
 /* Действие на кнопку "сохранить" */
 btnSave.addEventListener('click', function() {
+    let date = new Date();
     let note = {
         title: titleNewNote.value,
-        text: textarea.value
+        text: textarea.value,
+        date: date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear()
     };
 
     if (note.title === '' && note.text === '') return;
@@ -68,16 +70,15 @@ btnSave.addEventListener('click', function() {
 });
 
 function showNotes() {
-    let date = new Date();
     let newData= '';
     for (let i = 0; i < notesList.length; i++ ) {
         newData += 
         `
         <div class="notes__wrapper" id="${i}">
             <div class="notes__item">
-                <p class="item__title">`+ notesList[i].title +`</p>
-                <p class="item__text">`+ notesList[i].text +`</p>
-                <p class="item__date">` + date.getDate() + '.' + (date.getMonth() + 1) + '.' + date.getFullYear() +`</p>
+                <p class="item__title">${notesList[i].title}</p>
+                <p class="item__text">${notesList[i].text}</p>
+                <p class="item__date">${notesList[i].date}</p>
             </div>
             <button class="btn btn-edit" id="btn-edit${i}" uk-icon='icon: pencil; ratio: 1.5' uk-tooltip="Изменить заметку" onclick="editNote(this)"></button>
             <button class="btn btn-delete" id="btn-delete_${i}" uk-icon='icon: trash; ratio: 1.5' uk-tooltip="Удалить заметку" onclick="deleteNote(this)"></button>
